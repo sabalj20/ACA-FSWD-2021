@@ -100,7 +100,10 @@ Examples of libraries: Network protocols, compression, image manipulation, strin
 
     - The requests(commands) and responses are in readable text.
 
-    3- The requests are independent of each other and the server doesn’t need to track the requests.
+    - The requests are independent of each other and the server doesn’t need to track the requests.
+
+
+## THANK YOU!
 
 
 
