@@ -52,7 +52,6 @@
   - To access help in the Command Prompt, you have to type _"help"_ command and then press Enter. A list with all available commands is displayed.
 
 
-
 ### 2. SOME IMPORTANT TERMINOLOGIES
 
 #### CLIENTSIDE _vs_ SERVERSIDE
@@ -62,7 +61,6 @@ CLIENTSIDE | SERVERSIDE
 Client-side means that the action takes place on the user’s (the client’s) computer | Server-side means that the action takes place on a web server.
 Generally JavaScript is used to accomplish clientside tasks, as mostly all computers understand understand JavaScript and hence doesnt require connection to the Internet. | On the other hand, Ruby, PHP, and Python, etc are used to do serverside tasks. This requires Internet connectivity.
 Traditionally, client-side scripting is used for page navigation, data validation and formatting | Data storage and Management of database is usually handled server-side.
-
 
 
 #### HTTP _vs_ HTTPS
@@ -75,7 +73,6 @@ HTTP operates at application layer | HTTPS operates at transport layer.
 No SSL certificates are required for HTTP | HTTPS requireS an SSL certificate signed by a CA.
 HTTP doesn't require domain validation |  HTTPS requires domain validation and certain certificates even require legal document validation.
 No encryption in HTTP | With HTTPS the data is encrypted before sending
-
 
 
 #### LIBRARIES _vs_ FRAMEWORKS
@@ -104,6 +101,8 @@ Examples of libraries: Network protocols, compression, image manipulation, strin
 
 
 ## THANK YOU!
+
+### THE END...
 
 
 
