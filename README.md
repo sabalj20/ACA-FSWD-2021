@@ -104,5 +104,8 @@ Examples of libraries: Network protocols, compression, image manipulation, strin
 
 ### THE END...
 
+### THIS CODE WAS ADDED TO THE _ALTERNATIVE_ BRANCH
+- We used the _Git Branch_, _Git checkout_ and _Git merge_ feature to use the feature of branching.
+
 
 
