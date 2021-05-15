@@ -3,21 +3,104 @@
     <head>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Domine:wght@500&family=Montserrat&family=Oswald:wght@500&family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/18f5e78df1.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="https://res.cloudinary.com/dpb0o6dli/image/upload/v1621086823/S_Logo_toasbf.jpg" type="image/icon type">
         <style>
+
+            html, body 
+            {
+                margin: 0;
+                padding: 0;
+            }
             .header 
             {
                 font-family:"Cinzel";
                 color: lightslategray;
             }
 
+            a:link
+            {
+                text-decoration: none;
+                color: #505050;
+            }
+
+            a:visited
+            {
+                text-decoration: none;
+                color: #505050;
+            }
+
+            a:active
+            {
+                text-decoration: none;
+                color: white;
+                background-color: #505050;
+            }
+
+            a:hover
+            {
+                color: white;
+                background-color: #505050;
+            }
+
+            #navigation
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #303030;
+                top: 0;
+                position: -webkit-sticky;
+                position: sticky;
+                max-width: 100%;
+            }
+
+            .nav
+            {
+                float: left;
+                font-family: "Raleway";
+            }
+
+            .navlinks
+            {
+                display: block;
+                padding: 8px;
+                background-color: #303030;
+                text-decoration: none;
+            }
+
+            .navlinks:link
+            {
+                color: whitesmoke;
+            }
+
+            .navlinks:visited
+            {
+                color: whitesmoke;
+            }
+
+            .navlinks:active            
+            {
+                background-color: whitesmoke;
+                color: #303030;
+            }
+
+            .navlinks:hover
+            {
+                color: whitesmoke;
+                background-color: #202020;
+            }
+
+
             #h1
             {
                 letter-spacing: 7px;
                 font-size: 40px;
                 text-align: center;
-                background-color: #404040;
+                background-color: #434343;
                 color: white;
-                padding: 10px 10px;
+                padding: 20px 20px;
             }
 
             .container 
@@ -34,19 +117,54 @@
                 left: 32%;
             }
 
+            .centred1
+            {
+                position: absolute;
+                top: 43%;
+                left: 35%;
+            }
+
+            #quote
+            {
+                font-family: "Cinzel";
+                font-size: 50px;
+                color: whitesmoke;
+                font-weight: 400;
+            }
+
             .subHeading
             {
                 font-family: "Cinzel";
                 color: #404040 ;
                 font-size: 40;
+                margin-left: 180px;
+                margin-right: 180px;
+                text-align: center;
             }
 
             .para
             {
                 font-family: "Raleway";
-                margin-left: 150px;
-                margin-right: 150px;
+                margin-left: 180px;
+                margin-right: 180px;
             }
+
+            table 
+            {
+                border-collapse: collapse;
+                width: 100%;
+                padding: 10px 10px;
+                margin: 5px 5px;
+            }
+
+            th, tr 
+            {
+                padding: 8px 5px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            tr:hover {background-color:#f5f5f5;}
 
             #h3
             {
@@ -54,11 +172,6 @@
                 text-align: center;
                 letter-spacing: 2px;
                 font-size: 13px;
-            }
-
-            #AboutMe
-            {
-                text-align: center;
             }
 
             #para1
@@ -74,23 +187,131 @@
                 overflow: auto;
             }
 
+            #ideology
+            {
+                border-style: solid;
+                border-color: #404040;
+                border-radius: 4px;
+                padding: 10px 10px;
+                padding-bottom: 30px;
+            }
+
             #sabalPic
             {
-                max-width: 30%; 
+                max-width: 40%; 
                 margin-right: 40px;
-                margin-left: 20px;
+                margin-left: 10px;
                 float: left;
                 border-radius: 5px;
+                box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .dropdown 
+            {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content 
+            {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 500px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content 
+            {
+                display: block;
+                border-radius: 5px;
+            }
+
+            #achievementsPara
+            {
+                text-align: center;
+            }
+
+            #ideology:hover 
+            {
+                background-color:#f7f7f7;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            #contact
+            {
+                text-align: center;
+                word-spacing: 5px;
+            }
+
+            .info
+            {
+                background-color: #f5f5f5;
+                padding: 30px 30px;
+                padding-bottom: 50px;
+            }
+
+            #socials
+            {
+                max-width: 50%;
+                margin-right: 8%;
+                padding: 20px 20px;
+                padding-top: 40px;;
+                float: right;
+                overflow:auto;
+            }
+
+            #about
+            {
+                max-width: 50%;
+                padding: 20px 20px;
+                margin-left: 5%;
+            }
+
+            .aboutHead
+            {
+                font-family: "Cinzel";
+            }
+
+            #footer
+            {
+                font-family: "Raleway";
+                font-size: 12px;
+                color: #454545;
+                text-align: center;
+                padding: 20px 20px;
+            }
+
+            .icon
+            {
+                font-size: 36px; 
+                color:#404040;
+            }
+
+            .icon:hover
+            {
+                font-size: 36px;
+                background-color: white;
+                color: #202020;
             }
         </style>
         <title>
             MyPage        
         </title>
     </head>
-    <body>
+    <body style="line-height: 25px; color: #505050">
+
+        <ul id="navigation">
+            <li class="nav"><a href="#AboutMe" class="navlinks">About</a></li>
+            <li class="nav"><a href="#MySkills" class="navlinks">Skills</a></li>
+            <li class="nav"><a href="#achievements" class="navlinks">Achievements</a></li>
+            <li class="nav"><a href="#contactInfo" class="navlinks">Contact</a></li>
+        </ul>
         <div class="container">
-            <img src="https://icecube-eu-830.icedrive.io/download?p=4PLDZeKX8.X28OclmppTgguOxSybzzSpRXIkrf976RUaAMcF.REWDmonf9B8PgtXbsbb20J1c3QnAC4wvchMxDSCK4il2LCX2HSEU.9ZatHP5i3IUHgTtMLBMfm5ABZShOu.PDhNIoWWeMscoabkzmvyhN2c98gHeA6qVFPDLdmdE_k1GY6ELvAUvI3_YzwLSIRStBVTaa3huQY3f6s1uTWSHExrUqSV0D9fFFSYzf0-" alt="Cover" 
-            style="width:100%; opacity:0.9">
+            <img src="https://res.cloudinary.com/dpb0o6dli/image/upload/v1621049754/wallpaperflare.com_wallpaper_uoaemb.jpg" alt="Cover" 
+            style="max-width:100%; opacity:0.9">
             <div class="centred">
                 <h1 id="h1" class="header">
                     I AM SABAL JAIN
@@ -103,81 +324,168 @@
                 ABOUT ME
             </h2>
             <h3 id="h3">
-                <i>SOME WORDS</i>
+                <i>THE WITTY MUSICIAN</i>
             </h3>
             <br>
             <div class="para" id="para1">
                 You may have guessed what my name, 'Sabal' means, if not then, it means 'Strength'.
                 But, if you have seen me you probably wouldn't agree much. So, who am I? 
                 I am one of the 191 kids who gave the JEE ADVANCED exam and somehow got into the prestigious 
-                <a href="https://www.iitk.ac.in/">IIT Kanpur</a> majoring in 
-                <a href="https://www.iitk.ac.in/ee/">Electrical Engineering</a>. 
+                <a href="https://www.iitk.ac.in/" target="_blank">IIT Kanpur</a> majoring in 
+                <a href="https://www.iitk.ac.in/ee/" target="_blank">Electrical Engineering</a>. 
                 Born in 
-                <a href="https://en.wikipedia.org/wiki/Chandigarh">Chandigarh</a>, raised in 
-                <a href="https://en.wikipedia.org/wiki/Amritsar">Amritsar</a> till I was 5,
+                <a href="https://en.wikipedia.org/wiki/Chandigarh" target="_blank">Chandigarh</a>, raised in 
+                <a href="https://en.wikipedia.org/wiki/Amritsar" target="_blank">Amritsar</a> till I was 5,
                 moved back to Chandigarh (Panchkula precisely), and still in Chandigarh (again Panchkula, but who cares).
                 I studied in the great, 
-                <a href="https://www.stjohnschandigarh.com/#body">St. John's High School, Sector 26, Chandigarh</a> till 10th grade then shifted 
+                <a href="https://www.stjohnschandigarh.com/#body" target="_blank">St. John's High School, Sector 26, Chandigarh</a> till 10th grade then shifted 
                 to 
-                <a href="https://www.steppingstoneschd.org/">Stepping Stones Senior secondary School, Sector 37D Chandigarh</a>
+                <a href="https://www.steppingstoneschd.org/" target="_blank">Stepping Stones Senior Secondary School, Sector 37D Chandigarh</a>
                 , to pursue higher education.
             </div> <br>
             <div class="para" id="para2">
-                <img id="sabalPic" src="https://icecube-eu-280.icedrive.io/thumbnail?p=DeTWSWzfesp5IYDnwaDzpcza0lZ7Y0lE4VuEzmoeELdkz8h1dlKZr5f9a7NWw82a92yfzyzYMMliVOJwN_rlQmJjIueBzPUfljoMuTeVKtLgvTAHvNnEiQj9Tev8ouoq&w=1024&h=1024&m=cropped"
+                <img id="sabalPic" src="https://res.cloudinary.com/dpb0o6dli/image/upload/v1621050391/PicsArt_02-22-01.18.11_ukac4y.jpg"
                 alt="Sabal Image">
                 As for my interests go, playing guitar is my passion,
                 though not a carrer option; coding is sort of my jam these days and lastly as for sports,
                 I like to think I have risen above that cricket, football phase, so my current interest is Formula 1.
+                <br><br>
                 Besides all that, I love watching thrillers and those sneaky spy movies (just cant get enough of those)
                 and gosh, how can I forget the War Movies (Basically any non-animated movie, even rom-coms).
-                Game of Thrones and The Big Bang  theory will always remain on the top charts for me.
+                And not to forget, Game of Thrones and The Big Bang theory, these will always remain on the top charts for me.
+                <br><br>
+                I love listening to music; my pick: Blue Eyed Soul (Those soft yet heavy, pleasent but with a tint
+                or more of sad, Lewis Capaldi, Ed Sheeran type songs). I also Cycle, it truly is one of the best, though totally draining 
+                part of my day.
             </div>         
         </section>
 
+        <br>
+        <hr style="max-width: 80%;">
+        <br>
+
         <section>
-            <h2>
+            <h2 class="subHeading" id="MySkills">
                 MY SKILLS
             </h2>
-            <div>
+            <div class="para">
                 Nope, nothing fancy. I know you thought this would be full of stuff. 
                 But here it goes.
-                <ul>
-                    <li>Pursuing Web Development</li>
-                    <li>Strarted learning Baesian Machine Learning</li>
-                    <li>Programming Languages: C, HTML, CSS</li>
-                    <li>Some informal ones
-                        <ul>
-                        <li>I play the guitar</li>
-                        <li>Can scroll through IG reels all day</li>
-                        <li>Record: Watched appx. 46 episodes (20 min each) in 2 days</li>
-                        <li>Watched Harry Potter movies about 16 times</li>
-                        </ul>
-                    </li>
 
-                </ul>
-            </div>
+               <br>
+
+                <table>
+                    <tr><th><i class='fas'>&#xf108;</i> Programming Languages: C, HTML, CSS</th></tr>
+                    <tr><th><i class="fas fa-dice-d6"></i> Pursuing Web Development</th></tr>
+                    <tr><th><i class="fas fa-robot"></i> Strarted learning Baesian Machine Learning</th></tr>    
+                </table>
+                <br>    
+                
+                <div class="dropdown">
+                    <span>Some informal ones</span>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>I play the guitar</li>
+                            <li>Can scroll through IG reels all day</li>
+                            <li>Record: Watched appx. 46 episodes (20 min each) in 2 days</li>
+                            <li>Watched Harry Potter movies about 16 times</li>
+                        </ul>
+                    </div>
+                </div>   
+             </div>
         </section>
 
+        <br><br>
+        <hr style="max-width: 80%;">
+        <br><br>
+
         <section>
-            <h2>
+            
+            <div class="container">
+                <img src="https://res.cloudinary.com/dpb0o6dli/image/upload/v1621059054/pexels-pille-kirsi-748792copy_a4voac.jpg"
+                alt="trees" style="max-width: 100%;">
+                <div class="centred1" id="quote">
+                    AND STILL I RISE
+                </div>
+            </div>
+            
+            <br><br>
+            <h2 class="subHeading" id="achievements">
                 MY ACHIEVEMENTS
             </h2>
-            <div>
-                Having spent almost a year in college now, haven't earned much stars on that coat.
-                Though, I don't count it as an "achievement" but somehow by sheer dunb luck got 10 spi in the first sem 
-                (Besides, looking at the current stats, probably wont pass the 2nd sem :( )
-                and won (sort of) a couple treasure hunts too.
+            <br>
+            <div class="para" id="achievementsPara">
+                Having spent almost a year in college now, haven't earned much stars on that coat.<br>
+                Though, I don't count it as an "achievement" but somehow by sheer dunb luck got 10 spi in the first sem<br> 
+                (Besides, looking at the current stats, probably wont pass the 2nd sem :( )<br>
+                and won (sort of) a couple treasure hunts too.<br><br>
+
+                <div id="ideology">
+                    <h3>IDEOLOGY</h3>
+                    <div>
+                        My take on achievements has changed quite a bit, especially in the last two or three years.
+                        What I believe now is that achievements are nothing more than certfication or more appropriately approval.
+                        Do you need an approval for honesty? or trust? or establishing skills?
+                        I know it sounds absurd, how is achievement related to values? Its not (directly atleast).
+                        But it all comes down to the self. Its something you realise is important for you and you are not doing 
+                        it for someone else. Hence, if you know something, you do not need anyone documentation to prove it to yourself.
+                        The only approval you need is, youselves.
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+        </section>
+
+        <section>
+            <div class="info" id="contactInfo">
+                <h2 class="subHeading">
+                    CONTACT INFORMATION
+                </h2> 
+                <div class="para" id="contact">
+                    <i class="fas fa-map-marker-alt"></i> Panchkula, Haryana, India <br>
+                    <div>
+                        <i class="fas fa-envelope"></i> <a href="mailto:sabaljain19@gmail.com" target="_blank">sabaljain19@gmail.com</a>   
+                        &nbsp
+                        <i class="fas fa-envelope"></i> <a href="mailto:sabalj20@iitk.ac.in." target="_blank">sabalj20@iitk.ac.in</a><br>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>
-                CONTACT INFORMATION
-            </h2> 
-            <div>
-
+            <div id="socials">
+                <h3 class="aboutHead">
+                    SOCIAL MEDIA
+                </h3>
+                <div>
+                    <a class="icon" href="https://www.instagram.com/sabaljain19/" target="_blank"><i class="fab fa-instagram" ></i></a>
+                    &nbsp  &nbsp
+                    <a class="icon" href="https://www.facebook.com/sabal.jain.7>" target="_blank"><i class="fab fa-facebook"></i></a>
+                    &nbsp  &nbsp
+                    <a class="icon" href="https://www.linkedin.com/in/sabal-jain-a0970420b/" target="_blank"><i class="fab fa-linkedin-in" ></i></a>
+                    &nbsp  &nbsp
+                    <a class="icon" href="https://github.com/sabaljain" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </section>
+
+        <div id="about">
+            <h3 class="aboutHead"> 
+                ABOUT THIS PAGE
+            </h3>
+            <div style="font-family:Raleway">
+                This page was made as a part of my ACA-Project <br>after my 2nd Sem-midsems.
+                <br><br>
+                Last Updated: 15 March, 2021
+            </div>
+        </div>
+
+        <hr style="max-width: 90%;">
+
+        <div id="footer">
+            Copyright <i class="far fa-copyright"></i> 2021 GOT is the best TV SHOW ever! - Lots of Rights reserved
+        </div>
 
     </body>
 </html>
