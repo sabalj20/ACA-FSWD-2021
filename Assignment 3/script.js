@@ -6,7 +6,7 @@ function Token()
         if (this.readyState == 4 && this.status == 200) 
         {
             document.getElementById("token").value = JSON.parse(xhttp.responseText).token;
-            alert("TOKEN: "+ JSON.parse(xhttp.responseText).token);
+            alert("TOKEN: " + JSON.parse(xhttp.responseText).token);
         }
     }
 
