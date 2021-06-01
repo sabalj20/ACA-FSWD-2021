@@ -1,78 +1,71 @@
-function Token()
-{
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() 
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
-            document.getElementById("token").value = JSON.parse(xhttp.responseText).token;
-            alert("TOKEN: " + JSON.parse(xhttp.responseText).token);
-        }
-    }
+let getToken = document.getElementById("token");
 
-    xhttp.open("GET", "http://localhost:12345/get_token", true);
-    xhttp.send();
+getToken.onclick = async function ()
+{
+    try
+    {
+        let url = 'http://localhost:12345/get_token';
+        let response = await fetch(url);
+        let commits = await response.text(); 
+        alert(commits);
+    }
+    catch(err)
+    {
+        console.log(err);
+        alert("Token NOT_FOUND");
+    }
 }
 
-function register()
+let register = document.getElementById("register");
+
+register.onclick = async function ()
 {
-    var xhttp = new XMLHttpRequest();
-    
-    xhttp.onreadystatechange = function() 
+    let userData = 
     {
-        if (this.readyState == 4) 
-        {
-            if(this.status==200)
-            {
-                alert(xhttp.responseText);
-            }
+        "username" : String(document.getElementById("username").value),
+        "data" : String(document.getElementById("data").value),
+        "token" : String(document.getElementById("tokenInput").value)
+    };
 
-            else
-            {
-                alert("Error: " + JSON.parse(xhttp.responseText).error);
-            }
-        }
+    let responseReg = await fetch('http://localhost:12345/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(userData)
+    });
+
+    if ( responseReg.ok)
+    {
+        alert("User Registered Successfully");
     }
-
-    var obj = new Object();
-    obj.username=String(document.getElementById("username").value);
-    obj.data=String(document.getElementById("data").value);
-    obj.token=String(document.getElementById("token").value);
-    
-    xhttp.open("POST","http://localhost:12345/register",true);
-    xhttp.setRequestHeader("Content-Type","application/json");
-    xhttp.send(JSON.stringify(obj));
+    else 
+    {
+        alert(await responseReg.json().error);
+    }
 }
 
-function data()
+let login = document.getElementById("dataGet");
+
+login.onclick = async function ()
 {
-    var userValue = document.getElementById("username1");
-    var dataValue = document.getElementById("data1"); 
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() 
-    {
-        if (this.readyState == 4) 
-        {
-            var result = JSON.parse(xhttp.responseText);
-
-            if(result.error)alert("ERROR: " + result.error);
-            if(this.status=200)
-            {
-                userValue.innerHTML = "Username: " + result.username;
-                dataValue.innerHTML = "Data: " + result.data;
-            }
-        }
-    }
-
-    xhttp.open("POST", "http://localhost:12345/get_data", true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
+    let tokenEntered ={}
+    tokenEntered.token= document.getElementById("inputToken").value ;
     
-    var token1 = new Object();
-    token1.token = document.getElementById("inputToken").value;
-    xhttp.send(JSON.stringify(token1));
+    let response = await fetch('http://localhost:12345/get_data', 
+    {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(tokenEntered)
+    });
+    let userValue=document.getElementById("username1");
+    let dataValue=document.getElementById("data1");
+    if (response.ok) 
+    {
+        let result = await response.json();
+        userValue.innerHTML = "Username: " + result.username;
+        dataValue.innerHTML = "Data: " + result.data;
+    }
+    else
+    {
+        alert(await response.json().error);
+    }
 }
-
-document.getElementById("token").addEventListener("click", Token);
-document.getElementById("register").addEventListener("click", register);
-document.getElementById("dataGet").addEventListener("click", data);
