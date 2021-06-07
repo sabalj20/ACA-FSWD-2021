@@ -1,9 +1,9 @@
 const bodyParser = require('body-parser');
 const express = require('express'),
-     http = require('http'),
-     morgan = require('morgan'),
-     bodyParder = require('body-parser');
-
+    http = require('http'),
+    morgan = require('morgan'),
+    bodyParder = require('body-parser'),
+    dishRouter = require('./routes/dishRouter');
 const hostname = 'localhost';
 const port = 3000;
 
@@ -13,7 +13,9 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
-app.all('/dishes', (req, res, next) => {
+app.use('/dishes', dishRouter);
+
+/*app.all('/dishes', (req, res, next) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
   next();
@@ -52,7 +54,7 @@ res.end('Will update the dish: ' + req.body.name +
 
 app.delete('/dishes/:dishId', (req, res, next) => {
   res.end('Deleting dish: ' + req.params.dishId);
-});
+}); */
 
 const server = http.createServer(app);
 
